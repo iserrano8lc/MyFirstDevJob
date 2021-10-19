@@ -1,6 +1,6 @@
 #!/bin/bash
 
-printf "Retrieving SSH sessions\n"
+printf "Get SSH sessions PIDs\n"
 
 
 IFS=$'\n' read -rd '' -a SESSIONS <<< $(ps -C sshd -o pid,command | grep "pts/")
