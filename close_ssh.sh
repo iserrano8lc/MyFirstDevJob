@@ -9,6 +9,8 @@ IFS=$'\n' read -rd '' -a SESSIONS <<< $(ps -C sshd -o pid,command | grep "pts/")
 printf "Active sessions: ${#SESSIONS[*]}\n"
 
 
+# TODO: Identify current SSH Session and skip closing it
+
 for i in ${!SESSIONS[@]}
 do
         IFS=" " read -r -a SESSION <<< ${SESSIONS[i]}
